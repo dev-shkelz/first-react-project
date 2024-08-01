@@ -1,0 +1,103 @@
+.about-us {
+  /* width: 100vw; */
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  background: linear-gradient(to right, #434343 0%, black 100%);
+  color: white;
+}
+
+.about-title-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+/* Title animation: */
+.about-title {
+  box-sizing: border-box;
+  margin-top: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* text-align: center; */
+  position: relative;
+  /* width: 400px; */
+  height: 50px;
+  padding: 10px;
+  font-size: 18px;
+  border: 1px solid rgba(248, 248, 248, 0.464);
+  transition: all 0.3s ease;
+  cursor: default;
+}
+.about-title:hover {
+  /* background: rgb(209, 230, 249); */
+  /* border: none; */
+}
+
+/* ------Accordion------ */
+.accordion {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 50px 300px 150px 300px;
+}
+
+.panel {
+  display: flex;
+  /* flex-direction: column; */
+  justify-content: space-between;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+  padding: 0 10px;
+}
+.panel:hover {
+  /* background-color: aliceblue; */
+  background: linear-gradient(to right, #6b6a6a 0%, rgb(105, 105, 105) 100%);
+}
+
+.panel.flex {
+  flex-direction: column;
+  padding-top: 15px;
+  cursor: default;
+}
+
+.panel p {
+  text-align: left;
+  /* width: 600px; */
+}
+.panel-button {
+  border: none;
+  font-size: 35px;
+  background: transparent;
+  cursor: pointer;
+  color: white;
+}
+
+.sub-panel {
+  margin-top: 20px;
+  padding: 10px 10px;
+  /* border-bottom: 2px solid rgba(0, 0, 0, 0.5); */
+  background: linear-gradient(to right, #6b6a6a 0%, rgb(148, 147, 147) 100%);
+}
+
+/** ------------------------------------------------------------------------------------------------------------------*/
+/**                                                    T A B L E T                                                    */
+/** ------------------------------------------------------------------------------------------------------------------*/
+@media (min-width: 768px) and (max-width: 1067px) {
+  .accordion {
+    padding: 20px 20px;
+  }
+}
+/** -----------------------------------------------------------------------------------------------------------------*/
+/**                                                    M O B I L E                                                   */
+/** -----------------------------------------------------------------------------------------------------------------*/
+
+@media (min-width: 320px) and (max-width: 767px) {
+  .accordion {
+    padding: 30px 30px;
+  }
+  .about-title {
+    margin-top: 50px;
+  }
+}

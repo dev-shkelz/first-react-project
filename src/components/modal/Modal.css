@@ -1,0 +1,84 @@
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 10;
+  background-color: #00000070;
+  /* opacity: 0.5; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* opacity: 0; */
+  visibility: hidden; /* Initially hidden */
+  transition: opacity 3s ease 3s, visibility 0s linear 0.3s;
+}
+
+.modal-overlay.open {
+  /* opacity: 0.5; */
+  /* Fade in when open */
+  visibility: visible; /* Show when open */
+  transition: opacity 0.3s ease, visibility 0s linear; /* Smooth opacity transition */
+}
+
+.modal-wrapper {
+  background: #fff;
+  min-width: 600px;
+  /* height: 50vh; */
+  border: 1px solid #ccc;
+  /* position relative for x-icon: */
+  position: relative;
+  /* To center elements: */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 25px;
+  opacity: 100%;
+  box-sizing: border-box;
+}
+
+.x-icon {
+  font-size: 35px;
+  color: #544f5c;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+}
+
+/* For modal on the right side */
+
+.modal-overlay.right {
+  width: 30%;
+  right: 0;
+  left: auto;
+  opacity: 1;
+}
+
+/* Modal right wrapper for LogIn will take the height and width
+of the parent which is the Modal. */
+.modal-wrapper.right {
+  min-width: 100%;
+  min-height: 100%;
+  border-radius: 0;
+  background-color: rgba(0, 0, 0, 0.573);
+}
+/** --------------------------------------------------------------------------------------------- */
+/**                                      M O B I L E */
+/**---------------------------------------------------------------------------------------------- */
+
+@media (min-width: 320px) and (max-width: 767px) {
+  .modal-wrapper {
+    min-width: 100vw;
+    height: 100vh;
+    z-index: 9999 !important;
+    /* Why is z-index not working(over navbar) */
+  }
+  .modal-overlay.right {
+    width: 100%;
+  }
+}

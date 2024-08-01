@@ -1,0 +1,12 @@
+I created the folder "elements" to put here only Components that return
+HTML elements, like buttons, forms, etc.
+
+E.g.:
+
+const Button = ({title, handleClick}) => {
+    return (
+        <button type="submit" onclick={handleClick}>{title}</button>
+    )
+}
+
+But, I haven't used it.

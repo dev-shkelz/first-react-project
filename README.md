@@ -1,3 +1,79 @@
+# Project Title and Description:
+
+Project Title `first-react-app`
+Description: A mini-project where you can SignUp and LogIn to Add or Delete posts,
+and use the Demo-App, which is a youtube URL converter.
+
+## Installation Instructions:
+
+Step-by-step instructions on how you can install my project,
+including any dependencies that need to be installed separately:
+
+1. create react app 'first-react-app'
+2. npm install react-router-dom
+3. npm install react-hook-form
+4. npm install react-youtube
+
+## Usage:
+
+Start the application: `npm run start`
+
+## Folder Structure:
+
+In the `components` folder are the components of the `pages` folder.
+The components of e.g. `Home.js` are placed in the folder `home-comp`.
+`home-comp` can have other sub-folders like `hero`, `posts`, etc.
+So to make it clear, if a folder inside `components` is named say `example-comp`,
+it means that the components that are inside of it, belong to the page `Example.js`.
+On the other side, if the folder inside `components` is missing `-comp`
+or has another name, it means that those components can be used globally(e.g. Modal).
+
+Other folders like `hooks`, `context`, and `theme`, hold functionality based on their names.
+
+Mention: Only `Navbar` and `Footer` are placed in the `pages` folder,
+although they aren't pages.
+
+About CSS:
+
+1. CSS of `App.js` -div and the `Home.js`, `About.js` and `Contact.js` divs are placed in `App.css`.
+   (Hint: Only the wrapper divs).
+
+2. CSS of `Navbar.js` and `Footer.js` is placed in `index.css`.
+   `index.css` also holds all the global classes.
+
+3. CSS of `components` is placed inside the `components` folder,
+   where each `sub-folder` has its specific CSS file.
+
+## Features:
+
+## Dependencies:
+
+I have installed 3 libraries:
+
+"react-hook-form": "^7.52.1",
+"react-router-dom": "^6.24.1",
+"react-youtube": "^10.1.0",
+
+## Configuration:
+
+## Development:
+
+## Credits:
+
+`Egzon Murati` - Creative Hub React Lecturer
+
+## License:
+
+## Additional Notes:
+
+<!-- ................................................................. -->
+<!-- ................................................................. -->
+<!-- ................................................................. -->
+<!-- ................................................................. -->
+<!-- ................................................................. -->
+<!-- ................................................................. -->
+<!-- ................................................................. -->
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

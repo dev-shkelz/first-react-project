@@ -1,0 +1,23 @@
+.reso-svg {
+  width: 80px;
+  height: 60px;
+  background: linear-gradient(
+    to right,
+    #833ab484,
+    #fd1d1d,
+    #fcb045,
+    #4caf4f95,
+    #2196f3,
+    #673ab7,
+    #f44336,
+    #ffeb3b7b
+  );
+  background-size: 800% 800%;
+  animation: gradientAnimation 6s ease infinite;
+  border-radius: 50%;
+}
+
+.open-menu-icon {
+  width: 50px;
+  height: 50px;
+}

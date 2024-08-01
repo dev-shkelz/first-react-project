@@ -1,0 +1,469 @@
+/******************** AddPost Component ********************/
+
+.add-post-container {
+  box-sizing: border-box;
+  display: flex;
+  /* flex-direction: column; */
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 30px 0;
+  gap: 20px;
+  background: #c9ffbf;
+  color: #424040;
+  font-size: 18px;
+  font-weight: 500;
+  background: -webkit-linear-gradient(
+    to right,
+    #ffafbd,
+    #c9ffbf
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #ffafbd,
+    #c9ffbf
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+.add-post-container h2 {
+  text-align: center;
+  padding: 15px 30px;
+  font-size: 16px;
+  background-color: rgb(37, 37, 37);
+  color: rgb(214, 214, 214);
+  border-radius: 5px;
+  cursor: default;
+  transition: all 0.5s ease;
+}
+.add-post-container h2:hover {
+  transform: translateX(20px);
+}
+
+.add-post-container input {
+  padding: 10px 0;
+  font-size: 17px;
+  border-radius: 5px;
+  color: #ffffff;
+  background-color: rgb(37, 37, 37);
+  caret-color: rgb(255, 255, 255);
+  margin-left: 10px;
+}
+.add-post-container input:focus {
+  outline: none;
+}
+
+.add-post-container label {
+  /* width: 350px; */
+}
+.add-post-container button {
+  padding: 20px 50px;
+  cursor: pointer;
+  color: white;
+  border: none;
+  background-color: #383737;
+}
+.add-post-container button:hover {
+  background-color: #060606;
+}
+/* ----------------------------Locked Post------------------------ */
+.add-post-locked {
+  background: #c9ffbf; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #ffafbd,
+    #c9ffbf
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #ffafbd,
+    #c9ffbf
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+.add-post-locked {
+  padding: 25px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+/* Add Post Locked Container - Input Button */
+.add-post-locked input {
+  padding: 20px 15px;
+  width: 300px;
+  text-align: center;
+  border-radius: 5px;
+  border: none;
+  font-size: 18px;
+  color: #858383;
+}
+.add-post-locked input::placeholder {
+  font-size: 16px;
+}
+.add-post-locked input:focus {
+  outline: none;
+}
+
+.add-post-marquee {
+  width: 550px;
+  height: 50px;
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+  line-height: 50px;
+  background-color: #f0f0f0e4;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.add-post-marquee::before {
+  content: "Interstellar Movie  -  Sunday at 19:00  -  Get your tickets here";
+  display: inline-block;
+  white-space: nowrap; /*To put it in a single line*/
+  position: absolute;
+  will-change: transform;
+  animation: marquee 10s linear infinite;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+.add-post-locked button {
+  color: #858383;
+  padding: 15px 0;
+  width: 300px;
+  font-size: 18px;
+  border: none;
+  cursor: pointer;
+}
+
+/** ---------------------Posts Status Error-------------------------- **/
+.posts-status {
+  padding: 15px 10px;
+  display: flex;
+  justify-content: center;
+}
+.posts-status-error {
+  position: relative;
+}
+.posts-status-error::after {
+  content: ""; /* Needed for pseudo-element */
+  position: absolute; /* Position the dots absolutely */
+  bottom: 0;
+  /* Position on the left then 100% turn it to right, because
+  directly to the right it doesn't show the dots from left to right. */
+  left: 100%;
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: bottom;
+
+  animation: dot-animation 1.5s infinite steps(4);
+}
+
+@keyframes dot-animation {
+  0%,
+  10% {
+    content: ".";
+  }
+  20%,
+  30% {
+    content: "..";
+  }
+  40%,
+  50% {
+    content: "...";
+  }
+}
+
+/********************** Posts Component ***************************/
+.posts {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  place-items: center;
+  background: linear-gradient(to right, #434343 0%, black 100%);
+  /* overflow: hidden; */
+  grid-gap: 50px;
+  padding: 50px 50px;
+  padding: 80px 50px 50px 50px;
+}
+/** Pagination - 100 posts divided in 12 pages, each page containing 9 elements */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px 0;
+  gap: 10px;
+  padding-bottom: 100px;
+  background: linear-gradient(to right, #434343 0%, black 100%);
+}
+
+.paginate-button {
+  margin: 0 5px; /* Adjust spacing between buttons */
+  width: 35px;
+  height: 35px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #adadad;
+  background: linear-gradient(to right, #434343 0%, rgb(152, 151, 151) 100%);
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.paginate-button:hover {
+  background: linear-gradient(to right, #833ab4, #fa4848, #fcb045);
+
+  width: 30px;
+  height: 30px;
+}
+
+.paginate-button.button-active {
+  background: linear-gradient(to right, #833ab4, #fa4848, #fcb045);
+  background: linear-gradient(
+    to right,
+    #833ab4,
+    #fd1d1d,
+    #fcb045,
+    #4caf50,
+    #2196f3,
+    #673ab7,
+    #f44336,
+    #ffeb3b
+  );
+  background-size: 800% 800%;
+  animation: gradientAnimation 5s ease infinite;
+
+  color: #f3f6ed !important; /* White text color for active button */
+  border: none;
+  width: 30px;
+  height: 30px;
+}
+/**------------------------Post--------------------- */
+.post {
+  width: 350px;
+  height: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* box-sizing: border-box; */
+  border-radius: 10px;
+  padding: 10px;
+  gap: 10px;
+  transition: transform 0.1s ease;
+  /* background-color: rgb(50, 49, 49); */
+  background: url("../../../shared/images/cinema.png") no-repeat center center;
+  background-origin: red;
+  border: 10px solid rgb(0, 0, 0);
+  border: 5px solid rgb(19, 19, 19);
+}
+.post:hover {
+  border: 5px solid #72828f;
+}
+.post h1 {
+  font-weight: 550;
+  color: black;
+}
+.post p {
+  width: 200px;
+  height: 25px;
+  color: rgb(193, 192, 192);
+  white-space: nowrap; /* Prevent text from wrapping */
+  overflow: hidden; /* Hide overflowing text */
+  text-overflow: ellipsis;
+  text-align: center;
+}
+.post h2 {
+  color: rgb(193, 192, 192);
+  background-color: transparent;
+  /* padding: 10px 5px; */
+  height: 40px;
+  text-align: center;
+}
+.post h3 {
+  background: linear-gradient(to right, #2196f3, #2196f3, #2196f3);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  font-weight: 500;
+  font-size: 18px;
+}
+.post:hover {
+  /* background-color: #3206062b; */
+  transform: scale(1.1);
+}
+.post:hover p,
+.post:hover h2,
+.post:hover h3 {
+  /* color: white; */
+  transition: 0.5s ease;
+}
+.span-movie-color {
+  background: linear-gradient(to right, #833ab4, #fd1d1d, #fcb045);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  font-size: 16px;
+  font-weight: 600;
+}
+.post-buttons button {
+  padding: 5px 50px;
+  border: none;
+  cursor: pointer;
+  letter-spacing: 1px;
+  border-radius: 3px;
+  background-color: transparent;
+  border: 1px solid rgb(210, 210, 210);
+  color: rgb(210, 210, 210);
+}
+
+/** -------------------------------------Single Post--------------------------------------- **/
+.single-post {
+  background: linear-gradient(to right, #434343 0%, black 100%);
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 800px;
+}
+
+.single-post-container {
+  /* width: 500px;
+  height: 700px !important; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+  background: linear-gradient(to right, #434343 0%, black 100%);
+  color: white;
+  border-radius: 10px;
+  overflow: hidden;
+  /* padding: 100px 200px; */
+}
+.single-post-container img {
+  display: block;
+  max-width: 350px;
+  height: auto;
+}
+.single-post-container h1 {
+  color: rgb(223, 223, 223);
+  width: 400px;
+  text-align: center;
+}
+.single-post-container p {
+  color: rgb(223, 223, 223);
+  width: 400px;
+  text-align: center;
+}
+.single-post-container button {
+  padding: 10px 100px;
+  cursor: pointer;
+  border-radius: 5px;
+  border: none;
+  font-size: 14px;
+  color: rgb(239, 116, 116);
+  display: flex;
+  justify-content: center;
+}
+.single-post-container a {
+  text-decoration: none;
+  color: rgb(48, 48, 48);
+}
+/* -----------------Single Post Modal---------------- */
+.single-post .delete-post-warning {
+  width: 60%;
+  text-align: center;
+  color: rgb(48, 48, 48);
+}
+.single-post .delete-buttons-modal {
+  display: flex;
+  gap: 20px;
+  padding: 20px 50px;
+}
+.single-post .delete-buttons-modal button {
+  padding: 10px 30px;
+  cursor: pointer;
+  font-size: 14px;
+  color: rgb(48, 48, 48);
+  border: none;
+  transition: all 0.2s ease;
+}
+.single-post .delete-buttons-modal button:hover {
+  background-color: #adadad;
+}
+/** ------------------------------------------------------------------------------------------------------------------*/
+/**                                                    T A B L E T                                                    */
+/** ------------------------------------------------------------------------------------------------------------------*/
+@media (min-width: 768px) and (max-width: 1067px) {
+  /* ----------------------------Locked Post------------------------ */
+  .add-post-locked {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  /********************** Posts Component ***************************/
+  .posts {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 30px;
+    padding: 50px 10px;
+  }
+}
+/** -----------------------------------------------------------------------------------------------------------------*/
+/**                                                    M O B I L E                                                   */
+/** -----------------------------------------------------------------------------------------------------------------*/
+@media (min-width: 320px) and (max-width: 767px) {
+  /******************** AddPost Component ********************/
+
+  .add-post-container {
+    flex-direction: column;
+    /* display: none; */
+  }
+
+  .add-post-container label {
+    width: 250px;
+  }
+  .add-post-container button {
+    font-size: 18px;
+  }
+
+  /* ----------------------------Locked Post------------------------ */
+  .add-post-locked {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  /********************** Posts Component ***************************/
+  .posts {
+    grid-template-columns: repeat(1, 1fr);
+    justify-content: center;
+    grid-gap: 50px;
+  }
+
+  .paginate-button {
+    width: 25px;
+    height: 25px;
+    flex-shrink: 0;
+    font-size: 14px;
+  }
+
+  /**------------------------Post--------------------- */
+  .post {
+    width: 300px;
+  }
+
+  /** -------------------------------------Single Post--------------------------------------- **/
+  .single-post {
+  }
+
+  .single-post-container {
+    padding: 100px 200px;
+  }
+}

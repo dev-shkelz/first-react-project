@@ -1,0 +1,34 @@
+.contact-hero {
+  /* width: 100vw; */
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to right, #434343 0%, black 100%);
+}
+.contact-hero-container {
+  font-size: 22px;
+  position: relative;
+  animation: moveUpDown 1s infinite;
+  cursor: default;
+  color: white;
+}
+@keyframes moveUpDown {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(5px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+.contact-hero-container a {
+  background: linear-gradient(to right, #833ab4, #fd1d1d, #fcb045);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  font-size: 32px;
+}
